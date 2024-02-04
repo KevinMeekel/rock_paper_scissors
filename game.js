@@ -31,7 +31,9 @@ function playRound(playerSelection, computerSelection) {
         }
     }
 }
-let playerChoice = options[2];
 
+let userInput = prompt('Enter "Rock", "Paper" or "Scissors" (not case sensitive)', undefined);
+
+let playerChoice = userInput.toUpperCase();
 
 console.log(playRound(playerChoice, getComputerChoice()));
