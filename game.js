@@ -6,4 +6,32 @@ function getComputerChoice() {
     return pick;
 }
 
-console.log("Computer's choice: " + getComputerChoice());
+function playRound(playerSelection, computerSelection) {
+    console.log("Player chose " + playerSelection);
+    console.log("Computer chose " + computerSelection);
+    if (playerSelection === computerSelection) {
+        return "It's a tie!";
+    } else if (playerSelection === "ROCK") {
+        if (computerSelection === "SCISSORS") {
+            return "ROCK beats SCISSORS; Player wins!"
+        } else {
+            return "PAPER beats ROCK; Computer wins!"
+        }
+    } else if (playerSelection === "SCISSORS") {
+        if (computerSelection === "ROCK") {
+            return "ROCK beats SCISSORS; Computer wins!"
+        } else {
+            return "SCISSORS beat PAPER; Player wins!"
+        }
+    } else { //if PLAYER picks PAPER//
+        if (computerSelection === "ROCK") {
+            return "PAPER beats ROCK; Player wins!"
+        } else {
+            return "SCISSORS beat PAPER; Computer wins!"
+        }
+    }
+}
+let playerChoice = options[2];
+
+
+console.log(playRound(playerChoice, getComputerChoice()));
