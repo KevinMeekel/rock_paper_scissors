@@ -30,7 +30,8 @@ computerScoreDisplay.textContent = `Computer Score: ${computerScore}`;
 
 function getComputerChoice() {
     const roll = Math.floor(Math.random() * options.length);
-    const pick = options[roll];    
+    const pick = options[roll];   
+
     return pick;
 }
 
@@ -64,7 +65,7 @@ function playRound(playerSelection, computerSelection) {
             winner.textContent = "SCISSORS beat PAPER; Player wins!";
             playerScore++;
         }
-    } else { //if PLAYER picks PAPER//
+    } else {
         if (computerSelection === "ROCK") {
             winner.textContent = "PAPER beats ROCK; Player wins!";
             playerScore++;
